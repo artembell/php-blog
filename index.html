@@ -1,0 +1,50 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Blog</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container">
+		<h1>This is the starting point of this blog</h1>
+		<div class="posts">
+
+			<?php
+				require_once 'db.php';
+
+				$link = mysqli_connect($host, $user, $password, $dbname) or die("Ошибка " . mysqli_error($link));
+			 
+				$query = "SELECT * FROM posts";
+			 
+				$result = mysqli_query($link, $query) or die("Ошибка " . mysqli_error($link)); 
+
+				if($result)
+				{
+				    $rows = mysqli_num_rows($result);
+
+				    for ($i = 0 ; $i < $rows ; ++$i)
+				    {
+				        $row = mysqli_fetch_row($result);
+				        echo '<div class="article">';
+				        echo '<a href="article.php?id=1">'.$row[1].'</a>';
+				        echo "<p>".$row[2]."</p>";
+				        echo "<p>".$row[6]."</p>";
+				        echo "</div>";
+					}
+				    
+				     
+				    mysqli_free_result($result);
+				}
+
+				mysqli_close($link);
+			?>
+
+		</div>
+	</div>
+	
+</body>
+</html>

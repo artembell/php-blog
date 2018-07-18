@@ -1,0 +1,70 @@
+body{
+	font-family: Arial, sans-serif;
+	font-size: 14pt;
+}
+
+{
+	border: 1px solid red;
+}
+
+.container{
+	width: 70%;
+	margin: 0 auto;
+}
+
+h1{
+	color: blue !important;
+	//margin-top: 50px !important;
+}
+
+textarea{
+	width: 550px;
+	height: 300px;
+}
+
+id-input-hidden{
+	display: none;
+}
+
+
+/*Index page*/
+
+.title{
+	display: flex;
+}
+
+.title > h1{
+	width: 80%;
+}
+
+.title > h4{
+	width: 20%;	
+	display: flex;
+	justify-content: flex-end;
+}
+
+p{
+	margin: 10px 0 !important;
+}
+
+.article{
+	margin: 60px 0;
+}
+
+.article a{
+	font-size: 37px;
+}
+
+.article p:last-child{
+	font-size: 30px;
+}
+
+.article p:nth-child(2){
+	font-style: italic;
+}
+
+/*Article page*/
+
+span.time{
+	font-style: italic;
+}
